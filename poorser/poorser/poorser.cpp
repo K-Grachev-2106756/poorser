@@ -2,7 +2,6 @@
 #include<windows.h>
 
 
-//задержка времени Sleep(1000 + std::rand() % 3000);
 void client::interact() {
 
 	std::cout << "Приветствуем.\n"<<menu;
