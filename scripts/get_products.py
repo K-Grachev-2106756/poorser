@@ -1,3 +1,9 @@
+"""@package get_products docstring
+    Функция get_products() вызывается асинхронно. Используется для 
+    получения информации о товарах, номера которых добываются из 
+    ProductsIds.json, и их характеристиках. Формируется запрос, а 
+    затем полученный список укладывается в файл Products.json.
+"""
 import requests
 import json
 

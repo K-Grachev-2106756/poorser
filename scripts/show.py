@@ -1,3 +1,8 @@
+"""@package show docstring
+    Используется для форматированного вывода актуальной
+    информации о товарах в консоль. Берет информацию из
+    all_data.json.
+"""
 import json
 
 with open("all_data.json","r") as inf:

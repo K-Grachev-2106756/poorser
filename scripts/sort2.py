@@ -1,3 +1,8 @@
+"""@package sort2 docstring
+    Используется для сортировки данных в all_data.json
+    по размеру скидки. Отсортированные данные
+    переписывает в all_data.json.
+"""
 import json
 
 with open("all_data.json","r") as dat:

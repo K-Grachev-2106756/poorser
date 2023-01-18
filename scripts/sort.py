@@ -1,3 +1,8 @@
+"""@package sort docstring
+    Используется для первичной обработки информации.
+    Синхронизирует товары и их цены по коду товара.
+    Сохраняет нужное в all_data.json.
+"""
 import json
 
 with open("Products.json","r") as prod:
