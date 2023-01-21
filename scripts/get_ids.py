@@ -127,7 +127,7 @@ def get_ids():
 
     response = requests.get('https://www.mvideo.ru/bff/products/listing', params=params, cookies=cookies, headers=headers).json()
     ProductsIds = response.get('body').get('products')
-    with open('ProductsIds.json','w') as file:
+    with open('ProductsIds.json','w', encoding="utf-8") as file:
         json.dump(ProductsIds, file, indent = 4, ensure_ascii = False)
 
 

@@ -5,9 +5,9 @@
 """
 import json
 
-with open("Products.json","r") as prod:
+with open("Products.json","r", encoding="utf-8") as prod:
         Products = json.load(prod)
-with open("Prices.json","r") as price:
+with open("Prices.json","r", encoding="utf-8") as price:
         Prices = json.load(price)
 
 
@@ -31,5 +31,5 @@ for i in range(len(Prices)):
                  "bonus_rubles":Prices[i][3],
                  "propertiesPortion": propertiesPortion})
 
-with open('all_data.json','w') as file:
+with open('all_data.json','w', encoding='utf-8') as file:
         json.dump(data, file, indent = 4, ensure_ascii = False)

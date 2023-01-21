@@ -9,7 +9,7 @@ import json
 
 def get_products():
 
-    with open("ProductsIds.json","r") as read:
+    with open("ProductsIds.json","r", encoding="utf-8") as read:
         ProductsIds = json.load(read)
 
     cookies = {
@@ -139,7 +139,7 @@ def get_products():
     response = requests.post('https://www.mvideo.ru/bff/product-details/list', cookies=cookies, headers=headers, json=json_data).json()
 
     Products = response.get('body').get('products')
-    with open('Products.json','w') as file:
+    with open('Products.json','w', encoding="utf-8") as file:
         json.dump(Products, file, indent = 4, ensure_ascii = False)
 
 

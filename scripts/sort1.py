@@ -5,10 +5,10 @@
 """
 import json
 
-with open("all_data.json","r") as dat:
+with open("all_data.json","r", encoding="utf-8") as dat:
         data = json.load(dat)
 
 data = sorted(data, key = lambda el : el["sale_price"])
 
-with open('all_data.json','w') as file:
+with open('all_data.json','w', encoding='utf-8') as file:
         json.dump(data, file, indent = 4, ensure_ascii = False)

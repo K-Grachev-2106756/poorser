@@ -5,7 +5,7 @@
 """
 import json
 
-with open("all_data.json","r") as inf:
+with open("all_data.json","r", encoding="utf-8") as inf:
         data = json.load(inf)
 
 for i in range (len(data)):

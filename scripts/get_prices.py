@@ -10,7 +10,7 @@ import json
 
 def get_prices():
 
-    with open("ProductsIds.json","r") as read:
+    with open("ProductsIds.json","r", encoding="utf-8") as read:
         ProductsIds = json.load(read)
     ProductsIds_str = ','.join(ProductsIds)
 
@@ -133,7 +133,7 @@ def get_prices():
     for pr in prices_list:
         all_prices.append([pr["price"]["productId"], pr["price"]["basePrice"], pr["price"]["salePrice"], pr["bonusRubles"]["total"] ])
 
-    with open('Prices.json','w') as file:
+    with open('Prices.json','w', encoding="utf-8") as file:
         json.dump(all_prices, file, indent = 4, ensure_ascii = False)
 
 
