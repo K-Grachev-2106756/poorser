@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
-project(poorser)
+project(poorser_demo)
 
 include_directories(poorser)
 
@@ -23,7 +23,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
-install(TARGETS poorser_test DESTINATION poorser)
+install(TARGETS poorser_demo DESTINATION poorser)
 install(FILES scripts/get_ids.py DESTINATION poorser)
 install(FILES scripts/get_prices.py DESTINATION poorser)
 install(FILES scripts/get_products.py DESTINATION poorser)
