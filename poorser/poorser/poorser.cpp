@@ -1,52 +1,57 @@
 #include<poorser/poorser.hpp>
 #include<windows.h>
 
-
 void client::interact() {
-	std::cout << "====poorser_demo ver.01.22====\n" << menu_;
+	std::wstring menu_ = L"Выберите действие:\n\t1.Выбрать способ сортировки.\n\t2.Задать период обновления данных.\n\t3.Получить данные.";
+	std::wstring sorts_ = L"Выберите сортировку:\n\t1.По цене.\n\t2.По скидке.\n\t3.Вернуться в главное меню.";
+	std::wstring periods_ = L"Введите время в минутах или введите 0 для возврата в главное меню.";
+	std::wstring error_ = L"Введите корректные данные";
+	std::wstring intro_ = L"====poorser_demo ver.01.22====\n";
 	std::string interaction = "";
+
+	std::wcout << intro_<< menu_<<std::endl;
 	std::cin >> interaction;
 	while (interaction != "3") {
 		if (interaction != "1" && interaction != "2") {
-			std::cout << error_;
+			std::wcout << error_ << std::endl;
 		}
 		else {
 			if (interaction == "1") {
-				std::cout << sorts_;
+				std::wcout << sorts_ << std::endl;
 				std::cin >> interaction;
 				while (interaction != "1" && interaction != "2" && interaction != "3") {
-					std::cout << error_;
+					std::wcout << error_ << std::endl;
 					std::cin >> interaction;
 				}
 				if (interaction == "3") {
-					std::cout << "Без изменений.\n";
+					std::wcout << L"Без изменений.\n" << std::endl;
 				}
 				else {
 					this->sort = interaction;
-					std::cout << "Установлено.\n";
+					std::wcout << L"Установлено.\n" << std::endl;
 				}
 			}
 			else {
-				std::cout << periods_;
+				std::wcout << periods_ << std::endl;
 				std::cin >> interaction;
 				while ([&interaction]()->bool
 					{auto it = interaction.begin();
 					while (it != interaction.end() && std::isdigit(*it)) it++;
 					return interaction.empty() || it != interaction.end(); }() || interaction[0] == '0') {
-					std::cout << error_;
+					std::wcout << error_ << std::endl;
 					std::cin >> interaction;
 				}
 				int per = std::atoi(interaction.c_str());
 				if (per == 0) {
-					std::cout << "Без изменений.\n";
+					std::wcout << L"Без изменений.\n" << std::endl;
 				}
 				else {
 					this->period = per;
-					std::cout << "Установлено.\n";
+					std::wcout << L"Установлено.\n" << std::endl;
 				}
 			}
 		}
-		std::cout << menu_;
+		std::wcout << menu_ << std::endl;
 		std::cin >> interaction;
 	}
 	if (period == 0) {
@@ -113,3 +118,10 @@ void client::show_data() {
 			}
 		}
 	}*/
+
+/*
+std::string menu_ = "Выберите действие:\n\t1.Выбрать способ сортировки.\n\t2.Задать период обновления данных.\n\t3.Получить данные.\n";
+std::string sorts_ = "Выберите сортировку:\n\t1.По цене.\n\t2.По скидке.\n\t3.Вернуться в главное меню.\n";
+std::string periods_ = "Введите время в минутах или введите 0 для возврата в главное меню.\n";
+std::string error_ = "Введите корректные данные\n";
+std::string intro_ = "====poorser_demo ver.01.22====\n";*/

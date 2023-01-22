@@ -1,7 +1,9 @@
-#include<poorser/poorser.hpp>
+﻿#include<poorser/poorser.hpp>
+#include <io.h>
+#include <fcntl.h>
 
 int main() {
-	std::setlocale(LC_ALL, "Russian");
+	_setmode(_fileno(stdout), _O_U8TEXT);
 	
 	client C;
 
