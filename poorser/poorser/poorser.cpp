@@ -37,7 +37,7 @@ void client::interact() {
 				while ([&interaction]()->bool
 					{auto it = interaction.begin();
 					while (it != interaction.end() && std::isdigit(*it)) it++;
-					return interaction.empty() || it != interaction.end(); }() || interaction[0] == '0') {
+					return interaction.empty() || it != interaction.end(); }() || (interaction[0] == '0'&& interaction.length()!=1)) {
 					std::wcout << error_ << std::endl;
 					std::cin >> interaction;
 				}
